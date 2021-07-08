@@ -22,7 +22,8 @@
 # LiveData
     LiveData和ViewModel的关系
         在ViewModel中的数据发生变化时，会通知页面
-        ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/clipboard.png)        
+## LiveData和ViewModel关系图
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/clipboard.png)        
     LiveData的优势
         1.确保界面符合数据状态
         2.不会发生内存泄漏
