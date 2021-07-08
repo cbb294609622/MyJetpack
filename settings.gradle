@@ -1,0 +1,6 @@
+include ':MyLifecycle'
+rootProject.name = "MyJetpack"
+include ':MyViewModel'
+include ':MyLiveData'
+include ':MyNetWork'
+include ':MyDataBinding'
