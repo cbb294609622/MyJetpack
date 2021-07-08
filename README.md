@@ -1,7 +1,7 @@
 # MyJetpack
     研究一下JetPack
 # LifeCycle
-    # LifeCycle的好处
+    #LifeCycle的好处
         1.帮组开发者建立可感知生命周期的组件
         2.组件在其内部管理自己的生命周期，从而降低模块耦合度
         3.降低内存泄漏发声的可能性
