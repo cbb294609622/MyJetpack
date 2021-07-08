@@ -19,3 +19,14 @@
     ViewModel的小提示
         1.不要向ViewModel中传入Context，会导致内存泄漏
         2.如果要使用Context，请使用AndroidViewModel中的Application         
+# LiveData
+    LiveData和ViewModel的关系
+        在ViewModel中的数据发生变化时，会通知页面
+    LiveData的优势
+        1.确保界面符合数据状态
+        2.不会发生内存泄漏
+        3.不会因Activity停止而导致崩溃
+        4.不再需要手动处理生命周期
+        5.数据始终保持最新状态
+        6.适当的适配更改
+        7.共享资源    
