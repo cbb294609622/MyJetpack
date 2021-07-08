@@ -7,7 +7,7 @@
         3.降低内存泄漏发声的可能性
         4.Activity Fragment Service Application均有LifeCycle的支持
 # ViewModel
-    问题的关键
+## 问题的关键
         1.瞬态数据丢失
         2.异步调用的内存泄漏
         3.类膨胀提高维护难度和测试难度
@@ -24,7 +24,7 @@
         在ViewModel中的数据发生变化时，会通知页面
 ## LiveData和ViewModel关系图
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/clipboard.png)        
-    LiveData的优势
+## LiveData的优势
         1.确保界面符合数据状态
         2.不会发生内存泄漏
         3.不会因Activity停止而导致崩溃
