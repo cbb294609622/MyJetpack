@@ -16,8 +16,7 @@
     2.使视图和数据能够分离，也能保持通信
 ### 关系链
     不管生命周期怎么变化，viewModel上的数据是不会搜影响的，因为它单独存在。  
-![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/viewmodel1.png) 
-        
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/viewmodel1.png)  
 ### ViewModel的小提示
     1.不要向ViewModel中传入Context，会导致内存泄漏
     2.如果要使用Context，请使用AndroidViewModel中的Application         
