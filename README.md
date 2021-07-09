@@ -34,3 +34,11 @@
     6.适当的适配更改
     7.共享资源        
         
+# DataBinding
+    让布局文件承担了部分原本属于页面的工作，使页面与布局耦合度进一步降低。
+### xml中快捷键生成layout data
+    alt + enter
+### examples1 实例
+    展示databinding基础使用
+### examples2 实例
+    二级页面参数传递实例            
