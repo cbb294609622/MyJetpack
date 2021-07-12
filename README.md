@@ -41,4 +41,19 @@
 ### examples1 实例
     展示databinding基础使用
 ### examples2 实例
-    二级页面参数传递实例            
+    二级页面参数传递实例     
+### examples3 实例
+    BindingAdapter 图片加载
+### examples4 实例
+    双向绑定  继承BaseObservable   
+### examples5 实例
+    双向绑定  ObservableField
+### examples6 实例
+    RecyclerView 绑定实例
+### examples7 实例 
+    ViewModel+DataBinding+LiveData
+
+# Room
+    Android采用SQLite作为数据库存储，开源社区常见的ORM库有ORMLite等，
+    Room和其他库一样，也是在SQLite上提供了一层封装。    
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room.png)         
