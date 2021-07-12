@@ -56,4 +56,15 @@
 # Room
     Android采用SQLite作为数据库存储，开源社区常见的ORM库有ORMLite等，
     Room和其他库一样，也是在SQLite上提供了一层封装。    
-![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room.png)         
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room.png)      
+### Room的重要概念
+    1.Entity:实体类，对应的是数据库的一张表结构， 使用注解@Entity标记。 
+    2.Dao:包含访问一系列访问数据库的方法，使用注解@Dao标记。
+    3.Database:数据库持有者，作为与应用持久化相关数据的底层连接的主要接入点。
+        使用注解@Database标记，另外需满足以下条件:定义的类必须是一一个继承于RoomDatabase的抽象类，
+        在注解中需要定义与数据库相关联的实体类列表。包含 -个没有参数的抽象方法并且返回一个Dao对象。
+### Entity Dao Database 三者之间的关系
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room1.png) 
+### 进一步优化
+    问题：每当数据库数据发生变化时，都需要开启一个工作线程去重新获取数据库中的数据？
+    解决：当数据发生变化时，通过LiveData通知View层，实现数据自动更新。        
