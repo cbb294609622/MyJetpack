@@ -1,0 +1,22 @@
+package com.cbb.myrooms.task;
+
+import android.os.AsyncTask;
+
+import com.cbb.myrooms.Student;
+import com.cbb.myrooms.StudentDao;
+
+
+public class UpdateStudentTask extends AsyncTask<Student,Void,Void> {
+
+    private StudentDao studentDao;
+
+    public UpdateStudentTask(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+
+    @Override
+    protected Void doInBackground(Student... students) {
+        studentDao.updateStudent(students);
+        return null;
+    }
+}

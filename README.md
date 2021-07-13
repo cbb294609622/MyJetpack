@@ -67,4 +67,9 @@
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room1.png) 
 ### 进一步优化
     问题：每当数据库数据发生变化时，都需要开启一个工作线程去重新获取数据库中的数据？
-    解决：当数据发生变化时，通过LiveData通知View层，实现数据自动更新。        
+    解决：当数据发生变化时，通过LiveData通知View层，实现数据自动更新。     
+### Room + ViewModel + LiveData 关系图
+    MyRoom2 数据自动变更
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room2.png) 
+    
+       
