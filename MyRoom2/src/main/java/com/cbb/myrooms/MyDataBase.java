@@ -48,6 +48,26 @@ public abstract class MyDataBase extends RoomDatabase {
         }
     };
 
+    static final Migration MIGRATION_3_4 = new Migration(3,4) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            //1.创建临时表
+            database.execSQL("CREATE TABLE temp_student (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
+                    "name TEXT,"+
+                    "age INTEGER NOT NULL,"+
+                    "sex TEXT DEFAULT 'M',"+    //integer 修改为Text类型
+                    "bar_data INTEGER NOT NULL DEFAULT 1)");
+            //2.复制数据到临时表
+            database.execSQL("INSERT INTO temp_student (name,age,sex,bar_data)"+
+                    "SELECT name,age,sex,bar_data FROM student ");
+            //3.删除原始表
+            database.execSQL("DROP TABLE student");
+            //4.修改临时表为正式表
+            database.execSQL("ALTER TABLE temp_student RENAME TO student");
+        }
+    };
+
     public abstract StudentDao getStudentDao();
 
 }

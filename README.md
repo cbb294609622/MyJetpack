@@ -82,7 +82,7 @@
 ### Room添加版本升级schemas文件
     Room每次升级都会导出一个schemas文件，是一个json格式的文件。
     其中包含了数据库的基本信息，有了此文件，开发者可以很方便的排查问题。 
-### 销毁和重建策略
+### 销毁和重建策略(MyDataBase 中 MIGRATION_3_4)
     在SQLite中修改表结构比较麻烦，例如，我们想将Student表 中sex字段类型从INTEGER改为TEXT，
     最好的方式是采用销毁与重建策略，大致分为以下步骤:
         ●创建一张符合表结构要求的临时表temp_ student
