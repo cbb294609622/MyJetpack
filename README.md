@@ -71,5 +71,7 @@
 ### Room + ViewModel + LiveData 关系图
     MyRoom2 数据自动变更
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room2.png) 
-    
+### Room DataBase升级
+    需要使用Migration配置。
+    如果遇到需要从1升级到N(跳级)升级形式，需要逐步升级。    
        
