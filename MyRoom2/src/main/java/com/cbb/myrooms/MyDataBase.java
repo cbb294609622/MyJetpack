@@ -29,6 +29,7 @@ public abstract class MyDataBase extends RoomDatabase {
                     DATABASE_NAME)
 //                    .allowMainThreadQueries() //可以在主线程操作数据库
                     .addMigrations(MIGRATION_1_2,MIGRATION_2_3)
+//                    .createFromAsset("xxx.db") //预填充数据
                     .build();
         }
         return mInstance;

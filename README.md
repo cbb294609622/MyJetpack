@@ -90,4 +90,6 @@
         ●删除旧表student
         ●将临时表temp_ student重命名为student
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room3.png)
-    
+### 预填充数据库
+    有时候我们希望应用自带一些数据供我们使用，我们可以将数据库文件放入assets目录一起打包发布。
+    在用户首次打开APP时，使用createFromAsset()和createFromFile()创建Room数据库。    
