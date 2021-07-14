@@ -73,5 +73,13 @@
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/room2.png) 
 ### Room DataBase升级
     需要使用Migration配置。
-    如果遇到需要从1升级到N(跳级)升级形式，需要逐步升级。    
+    如果遇到需要从1升级到N(跳级)升级形式，需要逐步升级。  
+    
+    假设我们将数据库版本升级到4，却没有为此写相应的Migration，
+    则会出现一个lllegalStateException异常，
+    加入fallbackToDestructiveMigration()，
+    该方法在出现升级异常时，重建数据表,同时数据也会丢失。
+### Room添加版本升级schemas文件
+    Room每次升级都会导出一个schemas文件，是一个json格式的文件。
+    其中包含了数据库的基本信息，有了此文件，开发者可以很方便的排查问题。 
        
