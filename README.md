@@ -115,4 +115,12 @@
 ### 他们三责之间的关系 (Navigation Graph/NavHostFragment/NavController)
     当你想切换Fragment时，使用NavController对象，告诉它你想要去Navigation Graph中的哪个Fragment,
     NavController会将你想去的Fragment展示NavHostFragment中。
-   
+### 参数传递方式一
+    使用Bundle形式
+### 参数传递方式二
+    使用safeargs方式，需要引入插件  
+    project gradle中： 
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha06"     
+    module gradle中：
+        plugins{ id 'androidx.navigation.safeargs'}
+    
