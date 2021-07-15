@@ -93,3 +93,25 @@
 ### 预填充数据库
     有时候我们希望应用自带一些数据供我们使用，我们可以将数据库文件放入assets目录一起打包发布。
     在用户首次打开APP时，使用createFromAsset()和createFromFile()创建Room数据库。    
+    
+# Navigation
+    Activity嵌套多个Fragment的UI架构模式已经非常普遍，但是对Fragment的管理一直是一件比较麻烦的事情。
+    我们需要通过FragmentManager和FragmentTransaction来管理Fragment之间的切换。
+    页面的切换通常还包括对应用程序App bar的管理、Fragment间的切换动画，以及Fragment间的参数传递。
+    纯代码的方式使用起来不是特别友好，并且Fragment和App bar在管理和使用的过程中显得混乱。
+    为此，Jetpack提供了Navigation组件，旨在方便我们管理页面和App Bar。
+### Navigation的优势
+    ●可视化的页面导航图，类似于Apple Xcode中的StoryBoard，便于我们理清页面关系。
+    ●通过destination和action完成页面间的导航。
+    ●方便添加页面切换动画。
+    ●页面间类型安全的参数传递。
+    ●通过NavigationUl，对菜单、底部导航、抽屉菜单导航进行统一的管理。
+    ●支持深层链接DeepLink。
+### Navigation的主要元素
+    ●Navigation Graph，一种新的XML资源文件，包含应用程序所有的页面，以及页面间的关系。
+    ●NavHostFragment，一个特殊的Fragment，可以将它看作是其他Fragment的容器，Navigation Graph中的Fragment正是通过NavHostFragment进行展示的。
+    ●NavController，用于在代码中完成Navigation Graph中具体的页面切换工作。
+### 他们三责之间的关系 (Navigation Graph/NavHostFragment/NavController)
+    当你想切换Fragment时，使用NavController对象，告诉它你想要去Navigation Graph中的哪个Fragment,
+    NavController会将你想去的Fragment展示NavHostFragment中。
+   
