@@ -109,7 +109,8 @@
     ●支持深层链接DeepLink。
 ### Navigation的主要元素
     ●Navigation Graph，一种新的XML资源文件，包含应用程序所有的页面，以及页面间的关系。
-    ●NavHostFragment，一个特殊的Fragment，可以将它看作是其他Fragment的容器，Navigation Graph中的Fragment正是通过NavHostFragment进行展示的。
+    ●NavHostFragment，一个特殊的Fragment，可以将它看作是其他Fragment的容器，
+        Navigation Graph中的Fragment正是通过NavHostFragment进行展示的。
     ●NavController，用于在代码中完成Navigation Graph中具体的页面切换工作。
 ### 他们三责之间的关系 (Navigation Graph/NavHostFragment/NavController)
     当你想切换Fragment时，使用NavController对象，告诉它你想要去Navigation Graph中的哪个Fragment,
