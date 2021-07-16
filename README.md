@@ -133,9 +133,12 @@
 
 # DeepLink(深层链接)
     PendingIntent方式
-        当App收到某个通知推送，我们希望用户在点击该通知时，能够直接跳转到展示该通知内容的页面，可以通过PendingIntent来完成。
+        当App收到某个通知推送，我们希望用户在点击该通知时，能够直接跳转到展示该通知内容的页面，
+            可以通过PendingIntent来完成。
     URL方式
-        当用户通过手机浏览器浏览网站上某个页面时，可以在网页上放置一个类似于“在应用内打开"的按钮，如果用户的手机安装有我们的App，
-        那么通过DeepLink就能打开相应的页面;如果没有安装，那么网站可以导航到应用程序的下载页面，引导用户安装应用程序。
-        adb shell am start -a android.intent.action.VIEW -d "http://www.dongnaoedu.com/fromWeb"
+        当用户通过手机浏览器浏览网站上某个页面时，可以在网页上放置一个类似于“在应用内打开"的按钮，
+            如果用户的手机安装有我们的App，那么通过DeepLink就能打开相应的页面;如果没有安装，
+            那么网站可以导航到应用程序的下载页面，引导用户安装应用程序。
+        执行：
+            adb shell am start -a android.intent.action.VIEW -d "http://www.chenbobo.com/fromWeb"
          

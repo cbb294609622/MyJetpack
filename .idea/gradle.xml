@@ -12,9 +12,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/MyDataBinding" />
+            <option value="$PROJECT_DIR$/MyDeepLink" />
             <option value="$PROJECT_DIR$/MyLifecycle" />
             <option value="$PROJECT_DIR$/MyLiveData" />
             <option value="$PROJECT_DIR$/MyNavigation" />
+            <option value="$PROJECT_DIR$/MyNavigationUI" />
             <option value="$PROJECT_DIR$/MyNetWork" />
             <option value="$PROJECT_DIR$/MyRoom" />
             <option value="$PROJECT_DIR$/MyRoom2" />
