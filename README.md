@@ -193,9 +193,41 @@
     在Android原生系统上执行是没问题的，但是比如在华为、小米这些机型上有可能不执行，需要单独处理。
 
     
-    
-    
-    
-    
+# Paging    
+    分页加载是在应用程序开发过程中十分常见的需求，
+    Paging就是Google为了方便Android开发者完成分页加载而设计的一个组件。
+    它为几种常见的分页机制提供了统一的解决方案，让我们可以把更多精力专注在业务代码上。
+### Paging支持的架构类型
+    网络:对网络数据进行分页加载，是最常见的一种分页需求，也是我们学习的重点。
+        不同的公司针对分页机制所设计的API接口通常也不太一样，但总体而言可以归纳为3种。
+        Paging组件提供了3种不同的方案，以应对不同的分页机制。
+        分别是PositionDataSource、PageKeyedDataSource、ltemKeyedDataSource。
+    数据库:掌握了网络数据分页之后，数据库数据分页将会容易很多，无非就是数据源的替换。
+    网络+数据库:出于用户体验的考虑，我们通常会对网络数据进行缓存，以便用户在下次打开应用程序时，
+        应用程序可以先展示缓存数据。我们通常会利用数据库对网络数据进行缓存，
+        这意味着我们需要同时处理好网络和数据库这两个数据源。
+        多数据源会让业务逻辑变得更为复杂，所以，我们通常采用单一数据源作为解决方案。
+        即从网络获取的数据，直接缓存进数据库，列表只从数据库这个唯一的数据源获取数据，
+        这里我们会使用BoundaryCallback。
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging1.png)
+### Paging的工作原理
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging2.png)
+### Paging的三个核心类
+    PageListAdapter
+        RecyclerView需要搭配适配器使用，如果希望使用Paging组件，
+        适配器需要继承自PageListAdapter
+    PagedList
+        PagedList负责通知DataSource何时获取数据，以及如何获取数据，
+        例如：何时加载第一页、下一页，第一页加载的数量、提前多少条数据开始执行预加载等...
+        从DataSource获取的数据将存储在PagedList中。
+    DataSource
+        在DataSource中执行具体的数据载入工作，数据可以来自于网络或者数据库。
+        根据分页机制的不同，Paging为我们提供了3中DataSource。
+        分别是PositionDataSource、PageKeyedDataSource、ltemKeyedDataSource。
+        数据的载入需要在工作线程中进行。            
+### PositionDataSource
+### PageKeyedDataSource
+### ltemKeyedDataSource
+        
 
             
