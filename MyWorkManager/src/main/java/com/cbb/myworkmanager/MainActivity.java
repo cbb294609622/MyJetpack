@@ -1,14 +1,24 @@
 package com.cbb.myworkmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
+import androidx.work.Data;
 import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import java.time.Duration;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
                 .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
                 .build();
 
+        Data inputData = new Data.Builder()
+                .putString("input_data","jack")
+                .build();
 
         //配置任务
         //一次性执行的任务
@@ -45,10 +58,40 @@ public class MainActivity extends AppCompatActivity {
                 .setConstraints(constraints)
                 //设置延迟执行
                 .setInitialDelay(5, TimeUnit.SECONDS)
+                //指数退避策略
+                //.setBackoffCriteria(BackoffPolicy.LINEAR, Duration.ofSeconds(2))
+                //设置tag标签
+                .addTag("workRequest1")
+                //参数传递
+                .setInputData(inputData)
                 .build();
+
+        //周期性任务 不能少于15分钟
+//        PeriodicWorkRequest workRequest2 = new PeriodicWorkRequest.Builder(MyWork.class,Duration.ofMinutes(15)).build();
 
         //将任务提交给WorkManager
         WorkManager manager = WorkManager.getInstance(this);
         manager.enqueue(request1);
+
+        //观察任务状态
+        manager.getWorkInfoByIdLiveData(request1.getId()).observe(this, new Observer<WorkInfo>() {
+            @Override
+            public void onChanged(WorkInfo workInfo) {
+                String output_data = "";
+                if (workInfo != null && workInfo.getState() == WorkInfo.State.SUCCEEDED){
+                    output_data = workInfo.getOutputData().getString("output_data");
+                }
+                Log.e("MyWork", "onChanged: "+workInfo.toString()+
+                        "\noutputdata:"+output_data);
+            }
+        });
+
+        //取消任务
+//        new Timer().schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                manager.cancelWorkById(request1.getId());
+//            }
+//        }, 2000);
     }
 }

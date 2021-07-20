@@ -175,6 +175,22 @@
     并在任务执行完成后给用户反馈。而WorkManager不是即时的,
     它不能保证任务能立即得到执行。
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/workmanager1.png)   
+### WorkManager的使用方法
+    1.添加依赖
+    2.使用Work类定义任务
+    3.使用WorkRequest配置任务
+        设置任务触发条件
+        将任务触发条件设置到WorkRequest
+        设置延迟执行任务
+        设置指数退避策略
+        为任务设置tag标签
+    4.观察任务的状态
+    5.取消任务
+    6.参数传递
+    7.周期性任务
+    8.任务链
+
+
     
     
     
