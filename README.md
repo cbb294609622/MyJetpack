@@ -201,7 +201,7 @@
     网络:对网络数据进行分页加载，是最常见的一种分页需求，也是我们学习的重点。
         不同的公司针对分页机制所设计的API接口通常也不太一样，但总体而言可以归纳为3种。
         Paging组件提供了3种不同的方案，以应对不同的分页机制。
-        分别是PositionDataSource、PageKeyedDataSource、ltemKeyedDataSource。
+        分别是PositionDataSource、PageKeyedDataSource、ItemKeyedDataSource。
     数据库:掌握了网络数据分页之后，数据库数据分页将会容易很多，无非就是数据源的替换。
     网络+数据库:出于用户体验的考虑，我们通常会对网络数据进行缓存，以便用户在下次打开应用程序时，
         应用程序可以先展示缓存数据。我们通常会利用数据库对网络数据进行缓存，
@@ -223,11 +223,17 @@
     DataSource
         在DataSource中执行具体的数据载入工作，数据可以来自于网络或者数据库。
         根据分页机制的不同，Paging为我们提供了3中DataSource。
-        分别是PositionDataSource、PageKeyedDataSource、ltemKeyedDataSource。
+        分别是PositionDataSource、PageKeyedDataSource、ItemKeyedDataSource。
         数据的载入需要在工作线程中进行。            
 ### PositionDataSource
+    适用于可通过任意位置加载数据，且目标数据源数量固定的情况。
+    例如：请求时携带的参数为start=2&count=5，则表示向服务端请求从第2条数据开始往后的5条数据。
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging3.png)
 ### PageKeyedDataSource
-### ltemKeyedDataSource
+    适用于数据源以页的方式进行请求的情况，
+    例如：若请求时携带的参数为page=2&pageSize=5，则表示数据以5条数据为一页，当前返回第二页的5条数据。
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging4.png)    
+### ItemKeyedDataSource
         
 
             
