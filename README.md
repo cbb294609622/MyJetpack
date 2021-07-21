@@ -239,7 +239,7 @@
     例如：若上一页数据中最后一个对象的key为9001，那么在请求下一页时，
         需要携带参数since=9001&pageSize=5，则服务器会返回key=9001之后的5条数据。
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging5.png)    
-        
-        
+### MyPaging项目中MyJetpack.zip包说明
+    此zip包是用于MyPaging的三个接口                
 
             
