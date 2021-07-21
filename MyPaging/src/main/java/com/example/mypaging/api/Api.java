@@ -1,5 +1,6 @@
 package com.example.mypaging.api;
 
+
 import com.example.mypaging.model.Pages;
 
 import retrofit2.Call;
@@ -14,4 +15,9 @@ public interface Api {
             @Query("count") int count
     );
 
+    @GET("paging/pkds")
+    Call<Pages> getPagesPKDS(
+            @Query("page") int page,
+            @Query("pageSize") int count
+    );
 }

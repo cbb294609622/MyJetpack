@@ -234,6 +234,12 @@
     例如：若请求时携带的参数为page=2&pageSize=5，则表示数据以5条数据为一页，当前返回第二页的5条数据。
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging4.png)    
 ### ItemKeyedDataSource
+    适用于当目标数据的下一页需要依赖于上一页数据中最后一个对象中某个字段作为key的情况。
+    此类分页形式常见于评论功能的实现。
+    例如：若上一页数据中最后一个对象的key为9001，那么在请求下一页时，
+        需要携带参数since=9001&pageSize=5，则服务器会返回key=9001之后的5条数据。
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging5.png)    
+        
         
 
             

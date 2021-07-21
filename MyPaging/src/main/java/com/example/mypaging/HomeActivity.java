@@ -1,5 +1,8 @@
 package com.example.mypaging;
 
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -7,18 +10,18 @@ import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
 import com.example.mypaging.model.Person;
-import com.example.mypaging.pds.PersonPagedListAdapter;
-import com.example.mypaging.pds.PersonViewModel;
+import com.example.mypaging.pkds.PersonPagedListAdapter;
+import com.example.mypaging.pkds.PersonViewModel;
 
-public class MainActivity extends AppCompatActivity {
+
+public class HomeActivity extends AppCompatActivity {
+
 
     private RecyclerView recyclerView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);

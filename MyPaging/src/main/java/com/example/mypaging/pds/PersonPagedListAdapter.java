@@ -1,4 +1,4 @@
-package com.example.mypaging.paging;
+package com.example.mypaging.pds;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,17 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.paging.PagedListAdapter;
-import androidx.recyclerview.widget.AsyncDifferConfig;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mypaging.R;
 import com.example.mypaging.model.Person;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 public class PersonPagedListAdapter extends PagedListAdapter<Person,PersonPagedListAdapter.PersonViewHodler> {
 
