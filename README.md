@@ -243,6 +243,20 @@
     此zip包是用于MyPaging的三个接口                
 ### BoundaryCallback使用流程分析
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging6.png)
+
+# Compose    
+
+### 什么是Compose
+    一组UI控件
+    受到React/Litho/Vue.js和Flutter的启发
+    Kotlin编译器插件
+    基于声明式变成模型
+    使用画布而不是视图
+### Compose的优势
+    更少的代码：用更少的代码做更多的事儿，避免整个类的BUG，代码简单易于维护。
+    直观：只需要描述UI，剩下的由Compose处理。随着应用状态的变更，用户界面会自动更新。
+    与所有现有的代码兼容，因此可以随时随地采用。通过实时预览和完整的AS支持快速进行迭代。
+    通过直接访问Android平台API，对Material Design 深色主题，冬瓜等内置支持。创建美观的应用。
     
     
             
