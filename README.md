@@ -241,5 +241,8 @@
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging5.png)    
 ### MyPaging项目中MyJetpack.zip包说明
     此zip包是用于MyPaging的三个接口                
-
+### BoundaryCallback使用流程分析
+![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging6.png)
+    
+    
             
