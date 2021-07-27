@@ -245,7 +245,8 @@
 ![Image text](https://github.com/cbb294609622/MyJetpack/blob/master/img/paging6.png)
 
 # Compose    
-
+    最低SDK 版本为21
+    使用kotlin编写
 ### 什么是Compose
     一组UI控件
     受到React/Litho/Vue.js和Flutter的启发
